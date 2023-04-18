@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { Category } from "../models/Category";
+import { List, ListItem, ListItemText, Button, CssBaseline } from "@mui/material";
+import Header from "../../features/Header";
 
 function App() {
   const [categories, setCategories] = useState<Category[]>([]);
@@ -11,14 +13,18 @@ function App() {
   });
   return (
     <div>
-      <h1>Categories List</h1>
-      <ul>
+      <CssBaseline />
+      <Header />
+      <List>
         {categories.map((category, index) => (
-          <li key={index}>
-            {category.id} - {category.description}
-          </li>
+          <ListItem>
+            <ListItemText>
+              {category.id}: {category.description}
+            </ListItemText>
+          </ListItem>
         ))}
-      </ul>
+      </List>
+      <Button variant="outlined">Outline</Button>
     </div>
   );
 }
