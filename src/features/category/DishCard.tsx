@@ -26,6 +26,7 @@ export default function DishCard({ dish }: Props) {
             <CardHeader title={dish.name} />
             <CardMedia sx={{ height: 140 }} image="http://picsum.photos/200" title={dish.name} />
             <CardContent>
+                <Typography>Price: ${dish.price}</Typography>
                 <Typography>{dish.description ? dish.description : "Discription of this dish will be here. "}</Typography>
             </CardContent>
             <CardActions>
